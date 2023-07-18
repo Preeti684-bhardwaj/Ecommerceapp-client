@@ -116,7 +116,7 @@ const Navbar = () => {
           </IconButton>
           {/* here define the right header */}
           <Drawer open={dropen} onClose={handleClosedr}>
-            <Rightheader logclose={handleClosedr} />
+            <Rightheader logclose={handleClosedr} logoutuser={logoutuser}/>
           </Drawer>
           <div className='navlogo'>
             <NavLink to='/'><img src={logo} alt="logo" /></NavLink>

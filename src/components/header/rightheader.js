@@ -20,48 +20,16 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 
-const Rightheader = ({logclose}) => {
-    const [anchorEl, setAnchorEl] = useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  }
+const Rightheader = ({logclose,logoutuser}) => {
+   
 
 
     const { account, setAccount } = useContext(Logincontext);
-    const history=useNavigate()
     const fnameInitial = account?.fname?.charAt(0).toUpperCase() || '';
     
 
 
-    
-  const logoutuser = async () => {
-    try {
-      const res = await fetch('/logout', {
-        method: 'GET',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json'
-        },
-        credentials: 'include'
-      });
 
-      if (res.status === 201) {
-        const data2 = await res.json();
-        toast.success('Logout Successfully done 😃!', {
-          position: 'top-right'})
-        setAccount(false);
-        history("/")
-      } else {
-        console.log('data invalid');
-      }
-    } catch (error) {
-      console.log('Error: ' + error.message);
-    }
-  };
 
 
 //  this is left drawer bt name is right header
@@ -71,34 +39,10 @@ const Rightheader = ({logclose}) => {
             <div className="right_nav">
              <ToastContainer/>
             {
-            account ? <Avatar className="avtar2" id="basic-button"
-              aria-controls={open ? 'basic-menu' : undefined}
-              aria-haspopup="true"
-              aria-expanded={open ? 'true' : undefined}
-              onClick={handleClick} >{fnameInitial}</Avatar> :
-              <Avatar className="avtar" id="basic-button"
-              aria-controls={open ? 'basic-menu' : undefined}
-              aria-haspopup="true"
-              aria-expanded={open ? 'true' : undefined}
-              onClick={handleClick}></Avatar>
-          }
-
-          <Menu
-            id="basic-menu"
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-            MenuListProps={{
-              'aria-labelledby': 'basic-button',
-            }}
-          >
-            
-            <MenuItem onClick={()=> logclose()}><NavLink to="/login"><AccountCircleIcon style={{fontSize:20,marginRight:9}}/>My account</NavLink></MenuItem>
-            {
-              account ?  <MenuItem onClick={logoutuser}><LogoutIcon style={{fontSize:20,marginRight:9}}/>Logout</MenuItem> : ""
+            account ? <Avatar className="avtar2" id="basic-button">{fnameInitial}</Avatar>:
+            <Avatar className='avatar'></Avatar>
             }
-           
-          </Menu>
+       
 
                 {account ? <h3>Hello, {account.fname.toUpperCase()}😊</h3> : ""}
             </div>
@@ -116,14 +60,14 @@ const Rightheader = ({logclose}) => {
                     {/* <img src="" alt="india flag" style={{ width: 35, marginLeft: 10 }} /> */}
                 </div>
 
-                {/* {
+                {
                     account ?
                         <div className="flag">
                             <LogoutIcon style={{ fontSize: 18, marginRight: 4 }} />
-                            <h3 onClick={() => userlog()} style={{ cursor: "pointer", fontWeight: 500 }}>Log Out</h3>
+                            <h3 onClick={() => logoutuser()} style={{ cursor: "pointer", fontWeight: 500 }}>Log Out</h3>
                         </div>
-                        : <NavLink to="/login">Sign in</NavLink>
-                } */}
+                        : <NavLink to="/login">Sign In</NavLink>
+                }
 
 
             </div>
