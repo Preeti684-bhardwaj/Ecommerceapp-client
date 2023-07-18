@@ -98,8 +98,8 @@ header nav .right .cart_btn{
     cursor: pointer;
     margin-top: 2px;
     padding: 4px;
-    border-radius: 20px;
-    border: 1px solid #131921;
+    /* border-radius: 20px; */
+    /* border: 1px solid #131921; */
     align-items: center;
     justify-content: space-between;
     margin-right:30px;
@@ -180,6 +180,7 @@ header nav .drawer{
     header nav .left input::placeholder{
         visibility: hidden;
     }
+    
   
     header nav .right .cart_btn{
         margin-right: 0;

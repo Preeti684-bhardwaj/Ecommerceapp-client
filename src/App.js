@@ -7,30 +7,33 @@ import Sign_in from './components/signup_sign/Sign_in';
 import Cart from './components/cart/Cart';
 import Buynow from './components/buynow/Buynow';
 import './App.css';
-// import { useEffect, useState } from 'react';
-// import CircularProgress from '@mui/material/CircularProgress';
+import { useEffect, useState } from 'react';
+import CircularProgress from '@mui/material/CircularProgress';
 import {Routes, Route } from 'react-router-dom';
 
 
 
 function App() {
-  // const [data, setData] = useState(false);
+  const [data, setData] = useState(false);
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setData(true);
-  //   }, 2000);
-  // }, [])
+  useEffect(() => {
+    setTimeout(() => {
+      setData(true);
+    }, 2000);
+  }, [])
 
 
   return (
-          <>
-            <Navbar />
+    <>
+    {
+      data ? (
+        <>
+        <Navbar />
             <Newnavbar />
             <Routes>
               <Route exact path="/" element={<Maincomp/>}/>
               
-              <Route exact path="/signup" element={<Signup/>}/>
+              <Route exact path="/register" element={<Signup/>}/>
   
               <Route exact path="/login" element={<Sign_in />}/>
               
@@ -40,8 +43,16 @@ function App() {
 
           </Routes>
         <Footer/>
-    </>
-  );
+        </>
+      ) : (
+        <div className='circle'>
+          <CircularProgress/>
+          <h2>Loading....</h2>
+        </div>
+      )
+    }
+    </>  
+  ); 
 }
 
 export default App;

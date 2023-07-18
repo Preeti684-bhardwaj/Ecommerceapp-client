@@ -2,21 +2,21 @@ import React, { useContext, useEffect, useState } from 'react'
 import "./cart.css";
 // import { products } from '../home/productdata';
 import { Divider } from '@mui/material';
-import { useParams } from 'react-router';
+import { useParams,useNavigate } from 'react-router';
 import CircularProgress from '@mui/material/CircularProgress';
 import { Logincontext } from '../context/Context';
 
 const Cart = () => {
 
-    const { account, setAccount } = useContext(Logincontext);
-    // console.log(account);
-
-
-
+    
+    
+    
     const { id } = useParams("");
     // console.log(id);
-
-    // const history = useHistory();
+    const { account, setAccount } = useContext(Logincontext);
+    // console.log(account);
+    
+    const history=useNavigate("")
 
     const [inddata, setIndedata] = useState("");
 
@@ -44,11 +44,11 @@ const Cart = () => {
     };
 
     useEffect(() => {
-        setTimeout(getinddata, 1000)
+        setTimeout( getinddata,1000)
     }, [id]);
 
     const addtocart = async (id)=>{
-        console.log(id);
+        // console.log(id);
         const check = await fetch(`/addcart/${id}`, {
             method: "POST",
             headers: {
@@ -62,16 +62,16 @@ const Cart = () => {
         });
         // console.log(check);
         const data1 = await check.json();
-        console.log(data1 +  'ok');
+        console.log(data1);
 
-        if (check.status == 400 || !data1) {
+        if (check.status === 400 || !data1) {
           alert("no data available")
           console.log("error aa rha hai")
         } else {
           alert("data added to cart")
-            console.log("cart add ho gya hain");
-            setAccount(data1)
-            // history.push("/buynow");
+        setAccount(data1)
+        console.log("cart add ho gya hain");
+            history("/buynow");
         }
     }
 
@@ -106,8 +106,6 @@ const Cart = () => {
                     </div>
                 </div>
             }
-
-
 
             {!inddata ? <div className="circle">
                 <CircularProgress />

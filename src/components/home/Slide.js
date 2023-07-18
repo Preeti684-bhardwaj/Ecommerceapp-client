@@ -2,7 +2,7 @@ import React from 'react'
 import Carousel from 'react-multi-carousel'
 import "react-multi-carousel/lib/styles.css";
 import { Divider } from '@mui/material';
-// import { products } from './productdata';
+// import products  from './productdata';
 import { NavLink } from "react-router-dom";
 import './slide.css'
 const responsive = {
