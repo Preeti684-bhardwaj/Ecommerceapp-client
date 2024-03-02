@@ -58,7 +58,7 @@ const Cart = () => {
             body: JSON.stringify({
                 inddata
             }),
-            // credentials: "include"
+            credentials: "include"
         });
         // console.log(check);
         const data1 = await check.json();
