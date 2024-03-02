@@ -40,7 +40,7 @@ const Navbar = () => {
   const history=useNavigate()
   const cartItemCount = account?.carts?.length || 0;
   const fnameInitial = account?.fname?.charAt(0).toUpperCase() || '';
-
+// eslint-disable-next-line
   const getdetailsvaliduser = async () => {
     try {
       const res = await fetch('/validuser', {
@@ -65,7 +65,7 @@ const Navbar = () => {
 
   useEffect(() => {
     getdetailsvaliduser();
-  }, []);
+  }, [getdetailsvaliduser]);
    
 
   const getText=(items)=>{
@@ -94,6 +94,7 @@ const Navbar = () => {
       });
 
       if (res.status === 201) {
+        // eslint-disable-next-line
         const data2 = await res.json();
         toast.success('Logout Successfully done 😃!', {
           position: 'top-left'})

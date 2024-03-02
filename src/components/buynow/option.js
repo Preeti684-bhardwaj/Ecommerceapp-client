@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Option = ({deletedata,get}) => {
-  const { account, setAccount } = useContext(Logincontext);
+  const {setAccount } = useContext(Logincontext);
     // console.log(account);
 
     const removedata = async (req,res) => {

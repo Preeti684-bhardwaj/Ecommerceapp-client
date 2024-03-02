@@ -3,7 +3,7 @@ import Newnavbar from './components/newnavbar/newnavbar'
 import Maincomp from './components/home/Maincomp';
 import Footer from './components/footer/Footer'
 import Signup from './components/signupSign/SignUp';
-import Sign_in from './components/signupSign/SignIn';
+import SignIn from './components/signupSign/SignIn';
 import Cart from './components/cart/Cart';
 import Buynow from './components/buynow/Buynow';
 import './App.css';
@@ -35,7 +35,7 @@ function App() {
 
               <Route exact path="/register" element={<Signup />} />
 
-              <Route exact path="/login" element={<Sign_in />} />
+              <Route exact path="/login" element={<SignIn/>} />
 
               <Route exact path="/getproductsone/:id" element={<Cart />} />
 

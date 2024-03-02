@@ -13,7 +13,7 @@ const Cart = () => {
     
     const { id } = useParams("");
     // console.log(id);
-    const { account, setAccount } = useContext(Logincontext);
+    const {setAccount } = useContext(Logincontext);
     // console.log(account);
     
     const history=useNavigate("")
@@ -42,9 +42,9 @@ const Cart = () => {
             setIndedata(data);
         }
     };
-
     useEffect(() => {
         setTimeout( getinddata,1000)
+        // eslint-disable-next-line
     }, [id]);
 
     const addtocart = async (id)=>{
