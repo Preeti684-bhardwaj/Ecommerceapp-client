@@ -43,7 +43,7 @@ const Navbar = () => {
 // eslint-disable-next-line
   const getdetailsvaliduser = async () => {
     try {
-      const res = await fetch('https://ecommerceapp-server-ecru.vercel.app/validuser', {
+      const res = await fetch('/validuser', {
         method: 'GET',
         headers: {
           Accept: 'application/json',
