@@ -1,9 +1,7 @@
 import React, { useContext } from 'react';
 import Avatar from '@mui/material/Avatar';
-import Badge from '@mui/material/Badge';
-import { NavLink , useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Logincontext } from '../context/Context';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import "./rightheader.css";
 import { Divider } from '@mui/material';
 import LogoutIcon from '@mui/icons-material/Logout';
@@ -12,10 +10,6 @@ import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import SettingsIcon from '@mui/icons-material/Settings';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 const Rightheader = ({logclose, logoutuser}) => {
     const { account } = useContext(Logincontext);
@@ -24,7 +18,6 @@ const Rightheader = ({logclose, logoutuser}) => {
     return (
         <div className="rightheader">
             <div className="right_nav">
-                <ToastContainer/>
                 {account ? <Avatar className="avtar2" id="basic-button">{fnameInitial}</Avatar> : <Avatar className='avatar'></Avatar>}
                 {account ? <h3>Hello, {account.fname.toUpperCase()}😊</h3> : ""}
             </div>
@@ -37,7 +30,6 @@ const Rightheader = ({logclose, logoutuser}) => {
                 <Divider style={{ width: "100%", marginLeft: -20 }} />
                 <div className="flag">
                     <NavLink to="/" style={{ marginTop: 14 }}><SettingsIcon/>Settings</NavLink>
-                    {/* <img src="" alt="india flag" style={{ width: 35, marginLeft: 10 }} /> */}
                 </div>
                 {account ? (
                     <div className="flag">
