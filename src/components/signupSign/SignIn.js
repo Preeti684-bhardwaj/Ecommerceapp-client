@@ -31,7 +31,7 @@ const SignIn = () => {
     const { email, password } = logdata;
 
     try {
-      const res = await fetch('/login', {
+      const res = await fetch('https://ecommerceapp-server-ecru.vercel.app/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

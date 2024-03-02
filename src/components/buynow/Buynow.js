@@ -16,7 +16,7 @@ const Buynow = () => {
 
   const getdatabuy = async () => {
     try {
-      const res = await fetch("/cartdetails", {
+      const res = await fetch("https://ecommerceapp-server-ecru.vercel.app/cartdetails", {
         method: "GET",
         headers: {
           Accept: "application/json",
