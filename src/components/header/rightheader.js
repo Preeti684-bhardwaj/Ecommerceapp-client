@@ -25,6 +25,7 @@ const Rightheader = ({logclose,logoutuser}) => {
 
 
     const { account, setAccount } = useContext(Logincontext);
+    console.log(setAccount.fname)
     const fnameInitial = account?.fname?.charAt(0).toUpperCase() || '';
     
 

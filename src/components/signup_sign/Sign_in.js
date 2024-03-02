@@ -45,6 +45,7 @@ const Sign_in = () => {
       });
 
       const data = await res.json();
+      console.log(data);
 
       if (res.status === 400 || !data) {
         console.log('Invalid details');
@@ -54,7 +55,9 @@ const Sign_in = () => {
       } else {
         // Set token in cookies
         document.cookie = `token=${data.token}; path=/;`;
+        console.log(data.token);
         setAccount(data)
+        console.log(setAccount(data));
         setData({ ...logdata, email: '', password: '' });
         toast.success('Login Successfully done 😃!', {
           position: 'top-right'
