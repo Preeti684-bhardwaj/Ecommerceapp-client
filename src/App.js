@@ -3,7 +3,7 @@ import Newnavbar from './components/newnavbar/newnavbar'
 import Maincomp from './components/home/Maincomp';
 import Footer from './components/footer/Footer' 
 import Signup from './components/signup_sign/SignUp';
-import Sign_in from './components/signup_sign/Sign_in';
+import Sign_in from './components/signup_sign/SignIn';
 import Cart from './components/cart/Cart';
 import Buynow from './components/buynow/Buynow';
 import './App.css';

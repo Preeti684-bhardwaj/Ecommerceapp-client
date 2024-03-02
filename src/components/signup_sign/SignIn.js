@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { NavLink } from 'react-router-dom';
 import { Logincontext } from '../context/Context';
 
-const Sign_in = () => {
+const SignIn = () => {
   const history = useNavigate();
   const [logdata, setLogData] = useState({
     email: '',
@@ -114,4 +114,4 @@ const Sign_in = () => {
   );
 };
 
-export default Sign_in;
+export default SignIn;
