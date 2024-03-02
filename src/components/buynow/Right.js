@@ -1,4 +1,3 @@
-// Right.js
 import React, { useState, useEffect } from 'react';
 import protect from './protetc.jpeg';
 
@@ -6,16 +5,16 @@ const Right = ({ items }) => {
   const [price, setPrice] = useState(0);
 
   useEffect(() => {
+    const totalAmount = () => {
+      let totalPrice = 0;
+      items.forEach(item => {
+        totalPrice += item.price.cost;
+      });
+      setPrice(totalPrice);
+    };
+
     totalAmount();
   }, [items]);
-
-  const totalAmount = () => {
-    let totalPrice = 0;
-    items.forEach(item => {
-      totalPrice += item.price.cost;
-    });
-    setPrice(totalPrice);
-  };
 
   return (
     <div className="right_buy">

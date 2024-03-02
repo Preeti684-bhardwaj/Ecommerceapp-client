@@ -4,16 +4,16 @@ const Subtotal = ({ items }) => {
   const [price, setPrice] = useState(0);
 
   useEffect(() => {
-    totalAmount();
-  }, [items]);
+    const totalAmount = () => {
+      let totalPrice = 0;
+      items.forEach(item => {
+        totalPrice += item.price.cost;
+      });
+      setPrice(totalPrice);
+    };
 
-  const totalAmount = () => {
-    let totalPrice = 0;
-    items.forEach(item => {
-      totalPrice += item.price.cost;
-    });
-    setPrice(totalPrice);
-  };
+    totalAmount();
+  }, [items]); // Include totalAmount in the dependency array
 
   return (
     <div className='sub_item'>
