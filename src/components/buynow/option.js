@@ -23,7 +23,7 @@ const Option = ({deletedata,get}) => {
             // console.log(data);
 
             if (res.status === 400 || !data) {
-                console.log("error aai remove time pr");
+                // console.log("error aai remove time pr");
             } else {
               console.log("user deleted")
                 setAccount(data)
@@ -33,7 +33,7 @@ const Option = ({deletedata,get}) => {
                 });
             }
         } catch (error) {
-            console.log(error);
+            // console.log(error);
         }
 
     }

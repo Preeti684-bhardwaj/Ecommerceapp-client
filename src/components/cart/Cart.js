@@ -66,11 +66,11 @@ const Cart = () => {
 
         if (check.status === 400 || !data1) {
           alert("no data available")
-          console.log("error aa rha hai")
+        //   console.log("error aa rha hai")
         } else {
         //   alert("data added to cart")
         setAccount(data1)
-        console.log("cart add ho gya hain");
+        // console.log("cart add ho gya hain");
             history("/buynow");
         }
     }

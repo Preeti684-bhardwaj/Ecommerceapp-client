@@ -28,10 +28,10 @@ const Buynow = () => {
       if (res.status === 200) {
         setCartdata(data.carts);
       } else {
-        console.error("Failed to fetch cart data:", data.message);
+        // console.error("Failed to fetch cart data:", data.message);
       }
     } catch (error) {
-      console.error("Error fetching cart data:", error.message);
+      // console.error("Error fetching cart data:", error.message);
     }
   };
 
